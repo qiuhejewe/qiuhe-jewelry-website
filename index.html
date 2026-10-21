@@ -93,7 +93,26 @@
       z-index:1; color:white; font-family:Georgia,serif;
       font-size:26px;
     }
+/* QIUHE New Factory Banner */
+.hero-photo {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: hidden;
+  position: relative;
+}
 
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: static;
+  object-fit: contain;
+}
+
+.hero-photo::after {
+  display: none;
+}
     section { padding:95px 0; }
     .center { text-align:center; }
     .intro { max-width:680px; margin:15px auto 45px; }
@@ -189,11 +208,9 @@
           <a class="btn" href="#contact">START YOUR PROJECT →</a>
         </div>
       </div>
-      <div class="hero-photo">
-        <img
-          src="qiuhe-necklaces.jpg"
-          alt="Elegant jewelry collection">
-        <div class="hero-label">Elegance in Every Detail</div>
+      <img
+  src="qiuhe-factory-banner.png"
+  alt="QIUHE Jewelry Manufacturer - Direct Factory">
       </div>
     </div>
 
