@@ -249,16 +249,29 @@
   </div>
 
   <header>
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="logo" href="#">QIUHE</a>
-      <div class="links">
-        <a href="#home">HOME</a>
-        <a href="#collections">COLLECTIONS</a>
-        <a href="#factory">OUR FACTORY</a>
-        <a href="#services">OEM / ODM</a>
-        <a href="#contact">CONTACT</a>
-      </div>
-    </nav>
+  
+<nav class="nav wrap" aria-label="Main navigation">
+  <a class="logo" href="#home">QIUHE</a>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Toggle navigation"
+    aria-expanded="false"
+    aria-controls="main-menu"
+    onclick="const menu = document.getElementById('main-menu'); const isOpen = menu.classList.toggle('active'); this.setAttribute('aria-expanded', String(isOpen));">
+    ☰
+  </button>
+
+  <div class="links" id="main-menu">
+    <a href="#home">HOME</a>
+    <a href="#collections">COLLECTIONS</a>
+    <a href="#factory">OUR FACTORY</a>
+    <a href="#services">OEM / ODM</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
   </header>
 
   <main>
