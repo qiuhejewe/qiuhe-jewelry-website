@@ -112,6 +112,39 @@
 
 .hero-photo::after {
   display: none;
+}/* QIUHE Full Width Factory Banner */
+.hero#home {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero#home .factory-banner {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: static;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .hero#home {
+    height: auto;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .hero#home .factory-banner {
+    width: 100%;
+    height: auto;
+  }
 }
     section { padding:95px 0; }
     .center { text-align:center; }
@@ -194,19 +227,11 @@
   </header>
 
   <main>
-    <div class="hero" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow">Crafted for Your Brand</div>
-        <h1>Jewelry That Brings Your Vision to Life.</h1>
-        <p>
-          QIUHE is a jewelry manufacturing partner based in
-          Dongguan, China. We work with brands, retailers and
-          wholesale buyers on stainless steel, sterling silver
-          and fashion jewelry collections.
-        </p>
-        <div>
-          <a class="btn" href="#contact">START YOUR PROJECT →</a>
-        </div>
+   <div class="hero" id="home">
+  <img
+    src="qiuhe-factory-banner.png"
+    alt="QIUHE Jewelry Manufacturer - Direct Factory"
+    class="factory-banner">
       </div>
       <img
   src="qiuhe-factory-banner.png"
