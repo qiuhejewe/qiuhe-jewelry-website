@@ -64,8 +64,20 @@
     .links a:hover { color:var(--gold); }
 
     .hero {
-      display:grid; grid-template-columns:1fr 1fr;
-      min-height:600px; background:#eee7dc;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.hero .factory-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
     }
     .hero-copy {
       padding:90px max(7%,35px);
