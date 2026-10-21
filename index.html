@@ -352,40 +352,97 @@
       <h3>Send Us Your Inquiry</h3>
       <p>Complete the form below and our team will get back to you.</p>
 
-     <form id="inquiry-form"
+    
+<form id="inquiry-form"
       action="https://formspree.io/f/mljgqwka"
       method="POST">
-        <input type="text" name="name"
-               placeholder="Your Name" required
-               style="width:100%;padding:14px;margin-bottom:15px;">
 
-        <input type="email" name="email"
-               placeholder="Business Email" required
-               style="width:100%;padding:14px;margin-bottom:15px;">
+  <input type="text" name="name"
+         placeholder="Your Name" required
+         style="width:100%;padding:14px;margin-bottom:15px;">
 
-        <input type="text" name="company"
-               placeholder="Company Name"
-               style="width:100%;padding:14px;margin-bottom:15px;">
+  <input type="email" name="email"
+         placeholder="Business Email" required
+         style="width:100%;padding:14px;margin-bottom:15px;">
 
-        <select name="category"
-                style="width:100%;padding:14px;margin-bottom:15px;">
-          <option value="">Interested Product Category</option>
-          <option>Necklaces</option>
-          <option>Earrings</option>
-          <option>Rings</option>
-          <option>Bracelets</option>
-          <option>OEM / ODM Jewelry</option>
-        </select>
+  <input type="text" name="company"
+         placeholder="Company Name"
+         style="width:100%;padding:14px;margin-bottom:15px;">
 
-        <textarea name="message"
-                  placeholder="Tell us about your products, quantities, materials and customization requirements..."
-                  rows="5" required
-                  style="width:100%;padding:14px;margin-bottom:15px;"></textarea>
+  <select name="category"
+          style="width:100%;padding:14px;margin-bottom:15px;">
+    <option value="">Interested Product Category</option>
+    <option>Necklaces</option>
+    <option>Earrings</option>
+    <option>Rings</option>
+    <option>Bracelets</option>
+    <option>OEM / ODM Jewelry</option>
+  </select>
 
-        <button class="btn" type="submit">
-  SUBMIT INQUIRY →
-</button>
-      </form>
+  <textarea name="message"
+            placeholder="Tell us about your products, quantities, materials and customization requirements..."
+            rows="5" required
+            style="width:100%;padding:14px;margin-bottom:15px;"></textarea>
+
+  <button class="btn" type="submit" id="inquiry-submit">
+    SUBMIT INQUIRY →
+  </button>
+</form>
+
+<div id="inquiry-result"
+     role="status"
+     aria-live="polite"
+     style="display:none;max-width:650px;margin-top:25px;padding:25px;background:#fff;border:1px solid #d6c7b5;">
+</div>
+
+<script>
+(function () {
+  const form = document.getElementById("inquiry-form");
+  const result = document.getElementById("inquiry-result");
+  const button = document.getElementById("inquiry-submit");
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "SENDING...";
+    result.style.display = "none";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      form.style.display = "none";
+      result.style.display = "block";
+      result.innerHTML =
+        '<h3>Thank You for Your Inquiry!</h3>' +
+        '<p>Your inquiry has been successfully submitted. ' +
+        'Our QIUHE team will review your requirements ' +
+        'and get back to you as soon as possible.</p>';
+
+    } catch (error) {
+      result.style.display = "block";
+      result.textContent =
+        "Sorry, your inquiry could not be submitted. " +
+        "Please try again or contact us by email or WhatsApp.";
+    } finally {
+      button.disabled = false;
+      button.textContent = "SUBMIT INQUIRY →";
+    }
+  });
+})();
+</script>
+
     </div>
   </div>
 </section>
