@@ -3,191 +3,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="QIUHE Jewelry Manufacturer in Dongguan, China. Stainless steel, sterling silver and fashion jewelry manufacturing, with OEM and ODM customization.">
-  <title>QIUHE | Direct Jewelry Manufacturer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QIUHE is a jewelry manufacturer in Dongguan, China, offering stainless steel, sterling silver and fashion jewelry, OEM and ODM services.">
+  <title>QIUHE | Jewelry Manufacturer & OEM ODM</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --ink:#302923;
+      --muted:#746b61;
+      --gold:#a58458;
+      --cream:#f8f5ef;
+      --line:#e7e0d6;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
     body {
-      margin: 0;
-      color: #28241f;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #faf8f4;
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+    }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; width:100%; object-fit:cover; }
+    .wrap { max-width:1280px; margin:auto; padding:0 6%; }
+    .eyebrow {
+      font-size:11px; letter-spacing:3px;
+      color:var(--gold); text-transform:uppercase;
+    }
+    h1,h2,h3 {
+      font-family:Georgia,'Times New Roman',serif;
+      font-weight:400;
+    }
+    h2 { font-size:clamp(32px,4vw,48px); }
+    p { line-height:1.85; color:var(--muted); }
+    .btn {
+      display:inline-block; padding:16px 27px;
+      background:var(--ink); color:white;
+      font-size:12px; letter-spacing:1.5px;
+      transition:background .2s;
+    }
+    .btn:hover { background:var(--gold); }
+    .topbar {
+      background:#302923; color:#e8dfd2;
+      text-align:center; padding:10px;
+      font-size:10px; letter-spacing:2px;
     }
     header {
-      padding: 24px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e9e1d5;
+      background:#fffdf9; border-bottom:1px solid var(--line);
+    }
+    .nav {
+      min-height:90px; display:flex;
+      align-items:center; justify-content:space-between;
+      gap:25px;
     }
     .logo {
-      font-family: Georgia, serif;
-      font-size: 30px;
-      letter-spacing: 7px;
+      font-family:Georgia,serif; font-size:34px;
+      letter-spacing:8px;
     }
-    header span {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #9b7948;
-    }
+    .links { display:flex; flex-wrap:wrap; gap:26px; }
+    .links a { font-size:12px; letter-spacing:1px; }
+    .links a:hover { color:var(--gold); }
+
     .hero {
-      min-height: 510px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      padding: 70px 7%;
-      background: linear-gradient(120deg, #f7f0e5, #eee2cf);
+      display:grid; grid-template-columns:1fr 1fr;
+      min-height:600px; background:#eee7dc;
     }
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #987647;
-      text-transform: uppercase;
+    .hero-copy {
+      padding:90px max(7%,35px);
+      display:flex; flex-direction:column;
+      justify-content:center;
     }
     h1 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.12;
-      margin: 24px 0;
+      font-size:clamp(42px,5vw,72px);
+      line-height:1.1; margin:25px 0;
     }
-    .hero p {
-      line-height: 1.9;
-      color: #686159;
-      max-width: 500px;
+    .hero-copy p { max-width:480px; }
+    .hero-photo {
+      position:relative; min-height:450px;
+      background:#d6c7b5;
     }
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 25px;
-      background: #947347;
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 1px;
+    .hero-photo img {
+      height:100%; position:absolute; inset:0;
     }
-    .visual {
-      min-height: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      padding: 30px;
-      background: #ded0bb;
-      background-image: linear-gradient(
-        0deg, rgba(32,25,18,.65), transparent 75%
-      ), url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85");
-      background-size: cover;
-      background-position: center;
-      color: white;
+    .hero-photo:after {
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(0deg,rgba(20,15,10,.45),transparent 55%);
     }
-    .visual strong {
-      font-family: Georgia, serif;
-      font-size: 29px;
-      font-weight: 400;
+    .hero-label {
+      position:absolute; bottom:35px; left:35px;
+      z-index:1; color:white; font-family:Georgia,serif;
+      font-size:26px;
     }
-    .visual small { margin-top: 10px; }
-    .features {
-      padding: 55px 7%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
-      background: #fffdfa;
+
+    section { padding:95px 0; }
+    .center { text-align:center; }
+    .intro { max-width:680px; margin:15px auto 45px; }
+    .collections {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
-    .features h2 {
-      font-family: Georgia, serif;
-      font-size: 23px;
-      font-weight: 400;
+    .product-card { background:white; }
+    .product-card img {
+      height:300px; background:#e9e1d7;
     }
-    .features p, .about p {
-      font-size: 14px;
-      color: #6d665e;
-      line-height: 1.9;
+    .product-card h3 {
+      text-align:center; font-size:23px;
+      margin:22px 0;
     }
-    .about {
-      padding: 65px 7%;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
+    .manufacturing { background:#fffdf9; }
+    .factory-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; gap:8%;
     }
-    .about h2 {
-      font-family: Georgia, serif;
-      font-size: 36px;
-      font-weight: 400;
+    .factory-grid img { height:450px; }
+    .factory-grid p { margin-bottom:25px; }
+    .services {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:35px; margin-top:45px;
     }
+    .service {
+      border-top:1px solid var(--gold);
+      padding-top:22px;
+    }
+    .service h3 { font-size:25px; }
+    .contact {
+      background:#eae0d2; text-align:center;
+    }
+    .contact p { max-width:650px; margin:20px auto 30px; }
     footer {
-      padding: 28px 7%;
-      background: #28241f;
-      color: #eee5d8;
-      font-size: 12px;
-      line-height: 1.8;
+      background:var(--ink); color:#e8dfd2;
+      padding:45px 0;
     }
-    @media (max-width: 700px) {
-      header { padding: 20px 6%; }
-      .logo { font-size: 24px; }
-      .hero { grid-template-columns: 1fr; padding: 50px 6%; }
-      .visual { min-height: 280px; }
-      .features { grid-template-columns: 1fr; padding: 35px 6%; gap: 15px; }
-      .about { padding: 45px 6%; }
+    footer p { color:#c9beb1; font-size:13px; }
+    footer a { color:#e8dfd2; }
+
+    @media(max-width:900px) {
+      .collections { grid-template-columns:repeat(2,1fr); }
+      .services { grid-template-columns:1fr; }
+      .nav { flex-direction:column; padding-top:20px; padding-bottom:20px; }
+      .links { justify-content:center; }
+    }
+    @media(max-width:650px) {
+      .hero,.factory-grid { grid-template-columns:1fr; }
+      .hero-copy { padding:65px 7%; }
+      .hero-photo { min-height:380px; }
+      .collections { gap:12px; }
+      .product-card img { height:190px; }
+      .product-card h3 { font-size:19px; }
+      section { padding:65px 0; }
+      .factory-grid img { height:300px; }
+      .links { gap:14px; }
+      .links a { font-size:11px; }
     }
   </style>
 </head>
 <body>
+  <div class="topbar">
+    DIRECT JEWELRY MANUFACTURER · DONGGUAN, CHINA
+  </div>
+
   <header>
-    <div class="logo">QIUHE</div>
-    <span>JEWELRY MANUFACTURER</span>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="logo" href="#">QIUHE</a>
+      <div class="links">
+        <a href="#home">HOME</a>
+        <a href="#collections">COLLECTIONS</a>
+        <a href="#factory">OUR FACTORY</a>
+        <a href="#services">OEM / ODM</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Direct Factory · Dongguan, China</div>
-        <h1>Direct Factory for Your Jewelry Business</h1>
+    <div class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Crafted for Your Brand</div>
+        <h1>Jewelry That Brings Your Vision to Life.</h1>
         <p>
-          Your manufacturing partner for stainless steel, sterling silver
-          and fashion jewelry. Discover flexible customization, attentive
-          quality control and production support for your brand.
+          QIUHE is a jewelry manufacturing partner based in
+          Dongguan, China. We work with brands, retailers and
+          wholesale buyers on stainless steel, sterling silver
+          and fashion jewelry collections.
         </p>
-        <a class="button" href="#contact">DISCUSS YOUR PROJECT →</a>
+        <div>
+          <a class="btn" href="#contact">START YOUR PROJECT →</a>
+        </div>
       </div>
-      <div class="visual">
-        <strong>From Our Factory<br>to Your Brand</strong>
-        <small>Quality · Craftsmanship · Partnership</small>
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=85"
+          alt="Elegant jewelry collection">
+        <div class="hero-label">Elegance in Every Detail</div>
+      </div>
+    </div>
+
+    <section id="collections">
+      <div class="wrap">
+        <div class="center">
+          <div class="eyebrow">Discover Our Range</div>
+          <h2>Jewelry Collections</h2>
+          <p class="intro">
+            Explore our main product categories. Contact our team
+            to discuss designs, materials, finishes and sourcing.
+          </p>
+        </div>
+        <div class="collections">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85" alt="Necklace jewelry">
+            <h3>Necklaces</h3>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85" alt="Earrings jewelry">
+            <h3>Earrings</h3>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85" alt="Rings jewelry">
+            <h3>Rings</h3>
+          </div>
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=85" alt="Bracelets jewelry">
+            <h3>Bracelets</h3>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <div>
-        <h2>Direct Manufacturing</h2>
-        <p>Work directly with our Dongguan team to discuss product requirements and production details.</p>
-      </div>
-      <div>
-        <h2>OEM & ODM</h2>
-        <p>Discuss custom designs, materials, finishes and packaging for your jewelry collection.</p>
-      </div>
-      <div>
-        <h2>Quality Focus</h2>
-        <p>Material and quality requirements can be aligned with your product specifications.</p>
+    <section class="manufacturing" id="factory">
+      <div class="wrap factory-grid">
+        <img
+          src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1100&q=85"
+          alt="Jewelry detail - factory image placeholder">
+        <div>
+          <div class="eyebrow">Direct Manufacturing</div>
+          <h2>From Our Factory to Your Brand</h2>
+          <p>
+            Based in Dongguan, QIUHE works directly with jewelry
+            buyers to discuss manufacturing requirements,
+            product specifications and collection development.
+          </p>
+          <p>
+            We welcome discussions about material selection,
+            design customization, finishes, packaging and
+            production planning.
+          </p>
+          <a class="btn" href="#contact">WORK WITH US →</a>
+        </div>
       </div>
     </section>
 
-    <section class="about">
-      <div class="eyebrow">Your Jewelry Manufacturing Partner</div>
-      <h2>Built Around Your Brand</h2>
-      <p>
-        Whether you are developing a new collection or sourcing products
-        for retail, QIUHE welcomes inquiries from jewelry brands,
-        retailers and wholesale buyers.
-      </p>
+    <section id="services">
+      <div class="wrap">
+        <div class="center">
+          <div class="eyebrow">Manufacturing Solutions</div>
+          <h2>OEM & ODM Services</h2>
+        </div>
+        <div class="services">
+          <div class="service">
+            <h3>01. Product Development</h3>
+            <p>Discuss your concepts, product references, materials and design requirements with our team.</p>
+          </div>
+          <div class="service">
+            <h3>02. Customization</h3>
+            <p>Explore suitable options for styles, finishes, branding and packaging according to your project.</p>
+          </div>
+          <div class="service">
+            <h3>03. Production Support</h3>
+            <p>Coordinate product specifications, order requirements and quality expectations before production.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">Let's Work Together</div>
+        <h2>Build Your Next Jewelry Collection</h2>
+        <p>
+          Looking for a manufacturing partner?
+          Tell us about your products, quantities and
+          customization requirements. We welcome
+          inquiries from jewelry brands and wholesale buyers.
+        </p>
+        <a class="btn" href="mailto:vivianluenglike@gmail.com?subject=Jewelry%20Manufacturing%20Inquiry">
+          REQUEST A QUOTE →
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer id="contact">
-    <strong>QIUHE Fashion Jewelry Ltd</strong><br>
-    Jewelry Manufacturing · Dongguan, Guangdong, China<br>
-    Email: vivianluenglike@gmail.com<br>
-    Please contact us to discuss product categories, customization and your sourcing requirements.
+  <footer>
+    <div class="wrap">
+      <div class="logo">QIUHE</div>
+      <p>QIUHE Fashion Jewelry Ltd</p>
+      <p>Jewelry Manufacturing · Dongguan, Guangdong, China</p>
+      <p>Email:
+        <a href="mailto:vivianluenglike@gmail.com">vivianluenglike@gmail.com</a>
+      </p>
+      <p>© 2026 QIUHE. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
