@@ -329,7 +329,13 @@
   white-space: nowrap;
   border: 0;
 }
-
+/* Reserve space for responsive banner */
+@media (max-width: 768px) {
+  .factory-banner {
+    aspect-ratio: 940 / 1672;
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -369,12 +375,16 @@
 <h1 class="seo-h1">Wholesale Jewelry Manufacturer & OEM/ODM Services | QIUHE</h1>
 
 <picture>
-  <source media="(max-width: 768px)" srcset="banner-optimized.jpg">
+  <source
+    media="(max-width: 768px)"
+    srcset="banner-optimized.jpg">
 
   <img
     src="qiuhe-factory-banner.png"
     alt="QIUHE Jewelry Manufacturer - Direct Factory"
-    class="factory-banner">
+    class="factory-banner"
+    width="1918"
+    height="820">
 </picture>
 
 </div>
