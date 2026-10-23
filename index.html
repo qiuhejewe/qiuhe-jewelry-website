@@ -357,17 +357,26 @@
 }
 
 /* QIUHE SEO H1 */
+
 .seo-h1 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 18px 20px;
+  background: #f8f5f0;
+  color: #333333;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 0.3px;
+  clip-path: none;
+  overflow: visible;
+  white-space: normal;
   border: 0;
 }
+
 /* Reserve space for responsive banner */
 @media (max-width: 768px) {
   .factory-banner {
